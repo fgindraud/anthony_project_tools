@@ -26,8 +26,7 @@ help(python_eigen_wrapper)
 # Usage
 import numpy
 m = numpy.eye(10) # Id_10
-v = python_eigen_wrapper.eig_sy_eigen(m)
-# v is a numpy array of size 10
+(values, vectors) = python_eigen_wrapper.eig_sy_eigen(m)
 ```
 
 # Dev #
