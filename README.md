@@ -23,8 +23,11 @@ import python_eigen_wrapper
 # Print module info, including list of functions
 help(python_eigen_wrapper)
 
-# Print help for a specific function
-help(python_eigen_wrapper.func_name)
+# Usage
+import numpy
+m = numpy.eye(10) # Id_10
+v = python_eigen_wrapper.eig_sy_eigen(m)
+# v is a numpy array of size 10
 ```
 
 # Dev #
