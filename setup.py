@@ -12,7 +12,8 @@ setup (
         Extension (
             "python_eigen_wrapper",
             sources = ["src/wrapper.cpp"],
-            include_dirs = ["include/"]
+            include_dirs = ["include/"],
+            libraries = ["gmp"]
         )
     ],
 

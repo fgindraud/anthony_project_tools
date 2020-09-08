@@ -498,7 +498,7 @@ ComputationInfo computeFromTridiagonal_impl(DiagType& diag, SubDiagType& subdiag
   while (end>0)
   {
     for (Index i = start; i<end; ++i)
-      if (internal::isMuchSmallerThan(abs(subdiag[i]),(abs(diag[i])+abs(diag[i+1])),precision) || abs(subdiag[i]) <= considerAsZero)
+      if (internal::isMuchSmallerThan(RealScalar(abs(subdiag[i])),(abs(diag[i])+abs(diag[i+1])),precision) || abs(subdiag[i]) <= considerAsZero)
         subdiag[i] = 0;
 
     // find the largest unreduced block
