@@ -2,6 +2,9 @@ Wraps C++ eigenvalue computations functions in Python.
 
 # Install #
 
+Requires the system library `gmp`, with headers.
+On Ubuntu/Debian, install the `libgmp-dev` package using `apt-get`.
+
 If using `pip`, standalone or with `anaconda`, the following will install into the current environment:
 ```bash
 # At the git root
@@ -27,6 +30,7 @@ help(python_eigen_wrapper)
 import numpy
 m = numpy.eye(10) # Id_10
 (values, vectors) = python_eigen_wrapper.eig_sy_eigen(m)
+(values, vectors) = python_eigen_wrapper.eig_sy_eigen_internal_gmp(m)
 ```
 
 # Dev #
