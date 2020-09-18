@@ -13,7 +13,6 @@ setup (
             "python_eigen_wrapper",
             sources = ["src/wrapper.cpp"],
             include_dirs = ["include/"],
-            libraries = ["gmp"]
         )
     ],
 
