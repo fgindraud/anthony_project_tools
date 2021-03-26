@@ -16,17 +16,22 @@ python setup.py install --user
 
 # Usage #
 
-After an **install** in the current environment, the module can be loaded in any python interpreter or script:
+After an **install** in the current environment, the modules can be loaded in any python interpreter or script:
 ```python
-import eigen_wrapper
+import apt.eigen_wrapper # For eigsy
+import apt.kmeans # For jmeans
 
 # Print module info, including list of functions
-help(eigen_wrapper)
+help(apt.eigen_wrapper)
+help(apt.kmeans)
 
 # Usage
 import numpy
 m = numpy.eye(10) # Id_10
-(values, vectors) = eigen_wrapper.eigsy(m)
+(values, vectors) = apt.eigen_wrapper.eigsy(m)
+
+# Kmeans
+apt.kmeans.spherical_kmeans(points, nb_clusters, max_iter)
 ```
 
 # Dev #

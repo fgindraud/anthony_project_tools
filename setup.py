@@ -10,11 +10,12 @@ setup (
     # Code content
     ext_modules = [
         Extension (
-            "eigen_wrapper",
-            sources = ["src/wrapper.cpp"],
+            "apt.eigen_wrapper",
+            sources = ["apt/eigen_wrapper.cpp"],
             include_dirs = ["include/"],
         )
     ],
+    packages = ["apt"],
 
     # Metadata
     description = "Tools for Anthony's project",
