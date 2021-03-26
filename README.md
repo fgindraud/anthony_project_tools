@@ -19,7 +19,7 @@ python setup.py install --user
 After an **install** in the current environment, the modules can be loaded in any python interpreter or script:
 ```python
 import apt.eigen_wrapper # For eigsy
-import apt.kmeans # For jmeans
+import apt.kmeans # For kmeans
 
 # Print module info, including list of functions
 help(apt.eigen_wrapper)
