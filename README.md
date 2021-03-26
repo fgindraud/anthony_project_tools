@@ -18,15 +18,15 @@ python setup.py install --user
 
 After an **install** in the current environment, the module can be loaded in any python interpreter or script:
 ```python
-import python_eigen_wrapper
+import eigen_wrapper
 
 # Print module info, including list of functions
-help(python_eigen_wrapper)
+help(eigen_wrapper)
 
 # Usage
 import numpy
 m = numpy.eye(10) # Id_10
-(values, vectors) = python_eigen_wrapper.eig_sy_eigen(m)
+(values, vectors) = eigen_wrapper.eigsy(m)
 ```
 
 # Dev #
