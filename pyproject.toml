@@ -1,3 +1,22 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = [
+	"setuptools>=42",
+	# makes pybind11 available at buildtime ; it will be installed by pip if not present
+	# 2.10 adds python 3.11 support (C API break)
+	"pybind11>=2.10",
+]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "anthony_project_tools"
+version = "0.3"
+authors = [
+	{ name = "François GINDRAUD", email = "francois.gindraud@inria.fr" },
+]
+
+description = "Tools for Anthony's project"
+readme = "README.md"
+license = { text = "MIT" }
+urls = [
+	{ repository = "https://github.com/fgindraud/anthony_project_tools" },
+]

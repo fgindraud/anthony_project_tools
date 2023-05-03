@@ -1,18 +1,20 @@
-Wraps C++ eigenvalue computations functions in Python.
+# Tools for Anthony's project #
+
+- Wraps Eigen3's eigsy function (C++) in Python
+- Spherical Kmeans with kmeans++ init
 
 # Install #
 
-If using `pip`, standalone or with `anaconda`, the following will install into the current environment:
+This project uses the PEP517 `pyproject.toml` file, and should be compatible with the new python build standards.
+
+It is recommended to use `pip` to install into the current environment:
 ```bash
 # At the git root
 pip install .
 ```
 
-If not using any framework, an install in a _user local_ directory (`$HOME/.local/lib/` on my machine) can be done by running:
-```bash
-# At the git root
-python setup.py install --user
-```
+`pyproject.toml` is configured to install a version of pybind11 in the compilation environnement, instead of pre-including it like before `v0.3`.
+During tests, this failed when an outdated system install of pybind11 was present in addition to the temporary one ; maybe remove it if not used.
 
 # Usage #
 
@@ -36,6 +38,6 @@ apt.kmeans.spherical_kmeans(points, nb_clusters, max_iter)
 
 # Dev #
 
-Header only dependencies used, copied into this repository for ease of use:
- * pybind11, v2.5.0
- * Eigen, v3.3.7
+Dependencies :
+ * pybind11 : automatically installed by pip if needed
+ * Eigen, v3.3.7 : header only, local copy
