@@ -9,6 +9,5 @@ setup (
             sources = ["apt/eigen_wrapper.cpp"],
             include_dirs = ["include/"],
         )
-    ],
-    packages = ["apt"],
+    ]
 )

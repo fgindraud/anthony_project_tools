@@ -4,12 +4,13 @@ requires = [
 	# makes pybind11 available at buildtime ; it will be installed by pip if not present
 	# 2.10 adds python 3.11 support (C API break)
 	"pybind11>=2.10",
+	# TODO: if eigen breaks, consider using https://pypi.org/project/includeigen/ instead of local copy, if it is supported
 ]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "anthony_project_tools"
-version = "0.3"
+version = "0.3.1"
 authors = [
 	{ name = "François GINDRAUD", email = "francois.gindraud@inria.fr" },
 ]
@@ -17,6 +18,11 @@ authors = [
 description = "Tools for Anthony's project"
 readme = "README.md"
 license = { text = "MIT" }
-urls = [
-	{ repository = "https://github.com/fgindraud/anthony_project_tools" },
-]
+
+[project.urls]
+"Homepage" = "https://github.com/fgindraud/anthony_project_tools"
+"Bug Tracker" = "https://github.com/fgindraud/anthony_project_tools/issues"
+
+[tool.setuptools]
+# Explicitely set package directory
+packages = ["apt"]

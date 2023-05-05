@@ -16,6 +16,9 @@ pip install .
 `pyproject.toml` is configured to install a version of pybind11 in the compilation environnement, instead of pre-including it like before `v0.3`.
 During tests, this failed when an outdated system install of pybind11 was present in addition to the temporary one ; maybe remove it if not used.
 
+If the installation shows `UNKNOWN` as package name, it seems to be a similar problem but with an outdated system setuptools (which does not retrieve the metadata in pyproject.toml).
+The easiest solution seems to be to use a `virtualenv` to isolate from system libs, and use updated tools (`pip install --upgrade pip setuptools`).
+
 # Usage #
 
 After an **install** in the current environment, the modules can be loaded in any python interpreter or script:
