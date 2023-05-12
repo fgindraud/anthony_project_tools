@@ -11,4 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: pip install --upgrade pip setuptools
       - run: pip install .
-      - run: python -c 'import apt.eigen_wrapper; help(apt.eigen_wrapper)'
+      - name: Test import modules
+        run: |
+          cd # Change directory to ensure we do not load the source module
+          python -c 'import apt.eigen_wrapper; help(apt.eigen_wrapper)'
