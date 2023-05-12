@@ -16,4 +16,6 @@ jobs:
           source .venv/bin/activate
       - run: pip install .
       - name: Test module
-        run: python -c 'import apt.eigen_wrapper; print(help(apt.eigen_wrapper))'
+        run: |
+          cd /tmp # Prevent import from catching local dir
+          python -c 'import apt.eigen_wrapper; print(help(apt.eigen_wrapper))'
