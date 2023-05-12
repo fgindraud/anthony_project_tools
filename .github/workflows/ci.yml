@@ -1,0 +1,19 @@
+name: ci
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip python3-venv python-is-python3
+      - name: Setup virtualenv
+        run: |
+          python -m venv .venv --upgrade-deps
+          source .venv/bin/activate
+      - run: pip install .
+      - name: Test module
+        run: python -c 'import apt.eigen_wrapper; print(help(apt.eigen_wrapper))'
